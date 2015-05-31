@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.example.aleksandar.simpleplayer"
+        minSdkVersion 11
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile files('libs/YoutubeAndroidPlayerAPI.jar', 'libs/picasso-2.4.0.jar','libs/gdata-client-1.0.jar','libs/gdata-youtube-2.0.jar','libs/commons-io-2.4.jar')
+    compile 'com.google.apis:google-api-services-youtube:v3-rev137-1.20.0'
+}
